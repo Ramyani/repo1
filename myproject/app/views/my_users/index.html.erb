@@ -1,0 +1,11 @@
+<h1>List of all Users</h1>
+<ol>
+
+<% @users.each do |u| %>
+<li><%= u.name %>
+	<%= link_to 'Show', my_user_path(u) %>
+    	<%= link_to 'Edit', edit_my_user_path(u) %>
+   	<%= link_to 'Delete', my_user_path(u), :method => :delete, data: { confirm: 'Are you sure to delete this user?' } %></li>
+<% end %>
+</ol>
+<%= link_to 'New User', new_my_user_path %>
