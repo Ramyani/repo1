@@ -1,0 +1,19 @@
+<h1>Create New Post</h1>
+<%= form_for(@post) do |f| %>
+<%= error_messages_for :post%>
+<%=f.label :user_id, "User Id" %>
+<%=f.text_field :user_id %>
+<br>
+<%=f.label :title, "Title" %>
+<%=f.text_field :title %>
+<br>
+<%=f.label :description, "Description" %>
+<%=f.text_field :description %>
+<br>
+<%=f.submit "SUBMIT" %>
+<%end%>
+<br>
+<br>
+<label>back to</label><%= link_to 'Index Page', users_path %>
+
+
