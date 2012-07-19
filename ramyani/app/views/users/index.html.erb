@@ -5,7 +5,9 @@
 <li><%= u.user_name %>
 	<%= link_to 'Show', user_path(u) %>
     	<%= link_to 'Edit', edit_user_path(u) %>
-   	<%= link_to 'Delete', user_path(u), :method => :delete, data: { confirm: 'Are you sure to delete this user?' } %></li>
+   	<%= link_to 'Delete', user_path(u), :method => :delete, data: { confirm: 'Are you sure to delete this user?' } %>
+	<%= link_to 'Create_Post', new_post_path(u) %>
+</li>
 <% end %>
 </ol>
 <%= link_to 'New User', new_user_path %>

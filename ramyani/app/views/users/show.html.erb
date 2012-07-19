@@ -6,4 +6,15 @@
 <label>Email:</lebel><%= @user.email %><br>
 <label>User Type:</label><%= @user.user_type%><br>
 <label>Contact No:</label><%= @user.contact_no %>
+<br>
+<br>
+<h2><label>All Posts of <label><%= @user.full_name %></h2><br>
+<ol>
+<% u = @user.posts %>
+<% u.each do |a| %>
+<% p = a[:id] %>
+<li><%= link_to a[:created_at] , post_path(p)%>
+(<%= a[:title]%>)</li>
+<% end %>
+<ol>
 
