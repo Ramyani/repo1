@@ -1,0 +1,29 @@
+<h1>Create New User</h1>
+<%= form_for(@user) do |f| %>
+<%=f.label :f_name, "FirstName" %>
+<%=f.text_field :f_name %>
+<br>
+<%=f.label :l_name, "LastName" %>
+<%=f.text_field :l_name %>
+<br>
+<%=f.label :full_name, "FullName" %>
+<%=f.text_field :full_name %>
+<br>
+<%=f.label :user_name, "UserName" %>
+<%=f.text_field :user_name %>
+<br>
+<%=f.label :email, "Email" %>
+<%=f.text_field :email %>
+<br>
+<%=f.label :user_type, "User Type" %>
+<%=f.text_field :user_type %>
+<br>
+<%=f.label :contact_no, "Contact No" %>
+<%=f.text_field :contact_no %>
+<br>
+<%=f.submit "SUBMIT" %>
+<%end%>
+<br>
+<br>
+<label>back to</label><%= link_to 'Index Page', users_path %>
+
