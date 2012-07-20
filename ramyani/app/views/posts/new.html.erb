@@ -1,19 +1,14 @@
 <h1>Create New Post</h1>
-<%= form_for(@post) do |f| %>
-<%= error_messages_for :post%>
-<%=f.label :user_id, "User Id" %>
-<%=f.text_field :user_id %>
-<br>
-<%=f.label :title, "Title" %>
-<%=f.text_field :title %>
-<br>
-<%=f.label :description, "Description" %>
-<%=f.text_field :description %>
-<br>
-<%=f.submit "SUBMIT" %>
+<table>
+<%= form_for @post , :url => user_posts_path(@user.id),
+:html =>{:method => "post" } do |f| %>
+
+<tr><td><%=f.label :title, "Title" %></td><td><%=f.text_field :title %></td></tr>
+<tr><td><%=f.label :description, "Description" %></td><td><%=f.text_area :description %></td></tr>
+<tr><td><%=f.submit "SUBMIT" %></td></tr>
 <%end%>
-<br>
-<br>
+</table>
+
 <label>back to</label><%= link_to 'Index Page', users_path %>
 
 

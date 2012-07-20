@@ -1,5 +1,9 @@
 <h1>Post Details</h1>
-<%= @post.created_at %><br>
-<label>Title:</label><%= @post.title %><br>
-<label>Description:</label><%= @post.description %><br>
+<ul>
+<li>Date:<%= @post.created_at %></li>
+<li>Title:(<%= @post.title %>)</li>
+<li>Description:<br><%= @post.description %></li>
+</ul>
+
+
 

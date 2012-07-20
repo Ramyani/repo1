@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
 	def new
-		@post = Post.new
+		@user=User.find(params[:user_id])
+		@post = @user.posts.new
 	end
 
 	def create
-		@post = Post.new(params[:post])
+		@user=User.find(params[:user_id])
+		@post = @user.posts.new(params[:post])
 		if @post.save
 			# Handle a successful save.
     		else
@@ -12,6 +14,7 @@ class PostsController < ApplicationController
 		end
 	end
 	def show
+	
 		@post = Post.find(params[:id])
 	end
 

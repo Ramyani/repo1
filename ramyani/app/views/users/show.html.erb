@@ -1,20 +1,22 @@
 <h1>User Details</h1>
-<label>First Name:</label><%= @user.f_name %><br>
-<label>Last Name:</label><%= @user.l_name %><br>
-<label>Full Name:</label><%= @user.full_name %><br>
-<label>User Name:</label><%= @user.user_name %><br>
-<label>Email:</lebel><%= @user.email %><br>
-<label>User Type:</label><%= @user.user_type%><br>
-<label>Contact No:</label><%= @user.contact_no %>
-<br>
-<br>
-<h2><label>All Posts of <label><%= @user.full_name %></h2><br>
+<ul>
+<li>First Name:<%= @user.f_name %></li>
+<li>Last Name:<%= @user.l_name %></li>
+<li>Full Name:<%= @user.full_name %></li>
+<li>User Name:<%= @user.user_name %></li>
+<li>Email:<%= @user.email %></li>
+<li>User Type:<%= @user.user_type%></li>
+<li>Contact No:<%= @user.contact_no %></li>
+</ul>
+
+<h2>All Posts of <%= @user.full_name %></h2>
 <ol>
 <% u = @user.posts %>
 <% u.each do |a| %>
-<% p = a[:id] %>
-<li><%= link_to a[:created_at] , post_path(p)%>
+<li><%= link_to a[:created_at] , user_post_path(a.id)%>
 (<%= a[:title]%>)</li>
 <% end %>
-<ol>
+</ol>
+
+<label>back to</label><%= link_to 'Index Page', users_path %>
 
