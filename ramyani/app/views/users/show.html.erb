@@ -1,20 +1,19 @@
 <h1>User Details</h1>
 <ul>
-<li>First Name:<%= @user.f_name %></li>
-<li>Last Name:<%= @user.l_name %></li>
-<li>Full Name:<%= @user.full_name %></li>
-<li>User Name:<%= @user.user_name %></li>
-<li>Email:<%= @user.email %></li>
-<li>User Type:<%= @user.user_type%></li>
-<li>Contact No:<%= @user.contact_no %></li>
+<li><strong>First Name:</strong><%= @user.f_name %></li>
+<li><strong>Last Name:</strong><%= @user.l_name %></li>
+<li><strong>Full Name:</strong><%= @user.full_name %></li>
+<li><strong>User Name:</strong><%= @user.user_name %></li>
+<li><strong>Email:</strong><%= @user.email %></li>
+<li><strong>User Type:</strong><%= @user.user_type%></li>
+<li><strong>Contact No:</strong><%= @user.contact_no %></li>
 </ul>
 
 <h2>All Posts of <%= @user.full_name %></h2>
 <ol>
-<% u = @user.posts %>
-<% u.each do |a| %>
-<li><%= link_to a[:created_at] , user_post_path(a.id)%>
-(<%= a[:title]%>)</li>
+<% @posts.each do |p| %>
+<li><%= link_to p[:created_at] , user_post_path(p.user_id,p.id) %>
+(<%= p[:title]%>)</li>
 <% end %>
 </ol>
 

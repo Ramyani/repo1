@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	
 	def new
 		@user=User.find(params[:user_id])
 		@post = @user.posts.new
@@ -14,8 +15,8 @@ class PostsController < ApplicationController
 		end
 	end
 	def show
-	
-		@post = Post.find(params[:id])
+		@user =User.find(params[:user_id])
+		@post =Post.find(params[:id])
 	end
 
 end
