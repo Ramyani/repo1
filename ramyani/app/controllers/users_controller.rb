@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(params[:user])
 		if @user.save
+			redirect_to users_path
 			# Handle a successful save.
     		else
       			render 'new'

@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 		@user=User.find(params[:user_id])
 		@post = @user.posts.new(params[:post])
 		if @post.save
+			redirect_to user_path(@user)
 			# Handle a successful save.
     		else
       			render 'new'

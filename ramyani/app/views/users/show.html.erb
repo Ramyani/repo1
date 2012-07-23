@@ -8,7 +8,7 @@
 <li><strong>User Type:</strong><%= @user.user_type%></li>
 <li><strong>Contact No:</strong><%= @user.contact_no %></li>
 </ul>
-
+<%= link_to 'Create_Post', new_user_post_path(@user) %>
 <h2>All Posts of <%= @user.full_name %></h2>
 <ol>
 <% @posts.each do |p| %>
