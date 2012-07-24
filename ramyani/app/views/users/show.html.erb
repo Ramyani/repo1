@@ -12,10 +12,7 @@
 <h2>All Posts of <%= @user.full_name %></h2>
 <ol>
 <% @posts.each do |p| %>
-<li><%= link_to p[:created_at] , user_post_path(p.user_id,p.id) %>
-(<%= p[:title]%>)<%= link_to 'show', user_post_path(p.user_id,p.id) %>
-<%= link_to 'delete', user_post_path(p.user_id,p.id), :method => :delete, data: { confirm: 'Are you sure to delete this post?' } %>
-</li>
+<%= render :partial => '/posts/post', :locals=> {:p=>p} %>
 <% end %>
 </ol>
 
