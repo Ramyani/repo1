@@ -1,4 +1,4 @@
-<h1>Create New Post</h1>
+<h2>Create New Post</h2>
 <table>
 <%= form_for @post , :url => user_posts_path(@user.id),
 :html =>{:method => "post" } do |f| %>
@@ -9,6 +9,6 @@
 <%end%>
 </table>
 
-<label>back to</label><%= link_to 'Index Page', users_path %>
+<label>back to</label><%= link_to 'show page', user_path(@user) %>
 
 
