@@ -1,4 +1,4 @@
-<li><%= link_to p[:created_at] , user_post_path(p.user_id,p.id) %>
+<li><% t=p[:created_at] %><%= link_to t.strftime("%m/%d/%Y %I:%M%p") , user_post_path(p.user_id,p.id) %>
 (<%= p[:title]%>)<%= link_to 'show', user_post_path(p.user_id,p.id) %>
 <%= link_to 'delete', user_post_path(p.user_id,p.id), :method => :delete, data: { confirm: 'Are you sure to delete this post?' } %>
 </li>
