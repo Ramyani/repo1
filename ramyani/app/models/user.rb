@@ -17,7 +17,7 @@ end
 
 protected
 def make_user_name
-self.user_name = self.email
+self.user_name = self.email unless attribute_present?("user_name")
 end
 
 protected

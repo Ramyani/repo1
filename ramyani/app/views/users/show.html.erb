@@ -10,11 +10,13 @@
 </ul>
 <%= link_to 'Create_Post', new_user_post_path(@user) %>
 <h2>All Posts of <%= @user.full_name %></h2>
+
+<%= "you have no post" if(@posts==[])%>
 <ol>
 <% @posts.each do |p| %>
 <%= render :partial => '/posts/post', :locals=> {:p=>p} %>
 <% end %>
 </ol>
-
+<br><br>
 <label>back to</label><%= link_to 'Index Page', users_path %>
 
