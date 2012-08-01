@@ -32,7 +32,8 @@ ActiveRecord::Schema.define(:version => 20120719014407) do
     t.string   "l_name"
     t.string   "full_name"
     t.string   "contact_no"
-    t.string   "user_type"
+    t.integer  "user_type"
+    t.string   "password"
   end
 
   add_foreign_key "posts", "users", :name => "posts_user_id_fk"

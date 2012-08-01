@@ -1,8 +1,8 @@
 		<div id="header"  class="clearfix">
-			<div id="logo"><%=link_to image_tag("rails.png", :border=>0 , :alt=>"logo"),users_path %></div><h1>An Application by Ramyani Ghosh</h1>
+			<div id="logo"><%=link_to image_tag("rails.png", :border=>0 , :alt=>"logo"),root_path %></div><h1>An Application by Ramyani Ghosh</h1>
 			<div id="menu">
 				<ul class="clearfix">
-				  <li class="link"><a id="home" href="index.html">home</a></li>
+				 <li class="link"><a id="home" href="<%=root_path%>">home</a></li>
 					<li class="link_divider">|</li>
 				  <li class="link"><a id="about" href="about.html">about</a></li>
 					<li class="link_divider">|</li>

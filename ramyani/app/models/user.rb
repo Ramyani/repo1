@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 has_many :posts , :dependent => :destroy
-attr_accessible :user_name, :email, :f_name, :l_name, :full_name, :contact_no, :user_type
+attr_accessible :user_name, :email, :password, :f_name, :l_name, :full_name, :contact_no, :user_type
 validates :user_name, :length => { :maximum => 30}
 validates :email, :presence => true
 validates :f_name, :presence => true
