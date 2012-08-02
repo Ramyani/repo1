@@ -1,4 +1,5 @@
-<h2>User Details</h2>
+<h2>User Details</h2><%= link_to 'log out', session_path, :method =>
+:delete, :class => 'rightcorner' %>
 <ul>
 <li><strong>First Name:</strong><%= @user.f_name %></li>
 <li><strong>Last Name:</strong><%= @user.l_name %></li>

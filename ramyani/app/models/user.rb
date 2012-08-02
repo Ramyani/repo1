@@ -8,6 +8,14 @@ validates :l_name, :presence => true
 before_create :make_full_name
 before_create :make_user_name
 before_create :make_default_user_type
+def self.authenticate email, password
+        user = find_by_email email
+        if user && user.password ==password
+            user
+        else
+            false
+        end
+    end
 
 
 protected
