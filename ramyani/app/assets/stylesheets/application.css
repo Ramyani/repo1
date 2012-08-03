@@ -136,3 +136,19 @@ padding:25px;
 float:right;
 }
 
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+#error_explanation li {
+    font-size: 12px;
+    list-style: square; 
+color:red;
+list-style-position:inside;
+padding:5px;
+}
+

@@ -1,7 +1,18 @@
 <h2>Create New User</h2>
 <table>
 <%=form_for(@user) do|f| %>
-<%= f.error_messages %>
+<% if f.object.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-error">
+      The form contains <%= pluralize(f.object.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% f.object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <tr><td><%=f.label :f_name, "FirstName" %></td><td><%=f.text_field :f_name %></td></tr>
 <tr><td><%=f.label :l_name, "LastName" %></td><td><%=f.text_field :l_name %></td></tr>
 <tr><td><%=f.label :full_name, "FullName" %></td><td><%=f.text_field :full_name %></td></tr>

@@ -1,8 +1,13 @@
 Ramyani::Application.routes.draw do
+  get "static_pages/about"
+
+  get "static_pages/idea"
+
 resources :users do
 resources :posts
 end
 resources :sessions, only: [:new, :create, :destroy]
+resources :static_pages
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -59,4 +64,6 @@ resources :sessions, only: [:new, :create, :destroy]
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+match "/about", :to => 'static_pages#about'
+match "/idea", :to => 'static_pages#idea'
 end
