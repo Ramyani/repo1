@@ -1,10 +1,13 @@
 class User < ActiveRecord::Base
 has_many :posts , :dependent => :destroy
-attr_accessible :user_name, :email, :password, :f_name, :l_name, :full_name, :contact_no, :user_type
+attr_accessible :user_name, :email, :password, :f_name, :l_name, :full_name, :contact_no, :user_type, :password_confirmation 
 validates :user_name, :length => { :maximum => 30}
 validates :email, :presence => true
 validates :f_name, :presence => true
 validates :l_name, :presence => true
+validates :password, :presence => true
+validates :password, :confirmation => true
+validates :password_confirmation, :presence => true
 before_create :make_full_name
 before_create :make_user_name
 before_create :make_default_user_type

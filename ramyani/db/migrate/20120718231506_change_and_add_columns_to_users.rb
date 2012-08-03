@@ -6,6 +6,7 @@ class ChangeAndAddColumnsToUsers < ActiveRecord::Migration
 	add_column :users, :contact_no, :string
 	add_column :users, :user_type, :integer , :limit => 4
         add_column :users, :password, :string
+        add_index :users, :email, unique: true
     rename_column :users, :name, :user_name
   end
 

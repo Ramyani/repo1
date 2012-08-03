@@ -6,9 +6,14 @@ class SessionsController < ApplicationController
                 user = User.authenticate params[:email], params[:password]
                 if user
                         session[:user_id] = user.id
-                        redirect_to user_path(user), :notice => 'Welcome back, ' + user.user_name + '!'
+                      # redirect_to user_path(user), :notice => 'Welcome back, ' + user.user_name + '!'
+               
+              flash[:notice] = 'welcome ' +user.full_name + '!'
+              redirect_to user_path(user)
+          
+
                 else
-                        #flash[:notice] = "Please enter valid information."
+                        flash[:notice] = "Please enter valid information."
                         render 'new'
                 end
         end
